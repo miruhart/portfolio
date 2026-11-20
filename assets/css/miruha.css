@@ -24,6 +24,12 @@
 
 /* ---------- Base ---------- */
 
+/* 横スクロールの端でトラックパッドの「戻る」スワイプが発動しないようにする */
+html,
+body {
+	overscroll-behavior-x: none;
+}
+
 body,
 input,
 select,

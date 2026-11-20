@@ -1,0 +1,858 @@
+/*
+	miruha theme for "Ethereal" (HTML5 UP)
+	main.css のあとに読み込む上書き用スタイル。
+	色やフォントを変えたいときは、下の :root の値だけ直せば全体に反映されます。
+*/
+
+:root {
+	--yellow: #ffde59;
+	/* ブランドカラー */
+	--yellow-soft: #fff8dd;
+	/* 黄色を薄めた面 */
+	--ink: #2c2a25;
+	/* 文字・線の黒 */
+	--paper: #fffdf6;
+	/* 紙の白 */
+	--white: #ffffff;
+	--line: 3px;
+	/* 太い枠線 */
+	--shadow: 0.3rem 0.3rem 0 var(--ink);
+	/* ぼかさない影 */
+	--font-jp: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+	--font-en: "Archivo Black", "Arial Black", var(--font-jp);
+}
+
+/* ---------- Base ---------- */
+
+body,
+input,
+select,
+textarea {
+	color: var(--ink);
+	font-family: var(--font-jp);
+	font-weight: 500;
+	line-height: 1.85;
+	line-break: strict;
+}
+
+/* 背景：黄色の方眼 */
+body:after {
+	background-color: var(--yellow);
+	background-image:
+		linear-gradient(rgba(22, 22, 22, 0.07) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(22, 22, 22, 0.07) 1px, transparent 1px);
+	background-size: 2rem 2rem;
+	background-repeat: repeat;
+}
+
+body:before {
+	filter: none;
+}
+
+p {
+	font-size: 0.95rem;
+	margin: 0 0 1.25rem 0;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	border-bottom: solid 2px var(--yellow);
+}
+
+a:hover {
+	color: inherit;
+	border-bottom-color: var(--ink);
+}
+
+strong,
+b {
+	color: inherit;
+	font-weight: 700;
+}
+
+mark {
+	background: none;
+	color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: inherit;
+	font-family: var(--font-jp);
+	font-weight: 900;
+	letter-spacing: 0.02em;
+	line-height: 1.35;
+	word-break: auto-phrase;
+}
+
+h1 {
+	font-size: 3.1rem;
+	line-height: 1.25;
+}
+
+h2 {
+	font-size: 1.9rem;
+}
+
+h3 {
+	font-size: 1.1rem;
+}
+
+h1.major:after,
+h2.major:after,
+h3.major:after {
+	height: 0.3rem;
+	width: 3rem;
+	background-color: var(--ink);
+}
+
+h1.major {
+	margin-bottom: 2.75rem;
+}
+
+h1.major:after {
+	bottom: -1.4rem;
+}
+
+h2.major {
+	margin-bottom: 2.4rem;
+}
+
+h2.major:after {
+	bottom: -1.15rem;
+}
+
+/* ---------- Wrapper / Panels ---------- */
+
+#wrapper {
+	box-shadow: 0 0 0 var(--line) var(--ink), 0.75rem 0.75rem 0 var(--line) var(--ink);
+	background: var(--paper);
+}
+
+#wrapper>.copyright {
+	color: var(--ink);
+	font-size: 0.7rem;
+	font-weight: 700;
+	bottom: -3.25rem;
+}
+
+#wrapper>.copyright a {
+	border-bottom-color: var(--ink);
+}
+
+.panel {
+	background: var(--paper);
+}
+
+.panel+.panel {
+	border-left: var(--line) solid var(--ink);
+}
+
+.panel>.bg-paper,
+.panel .content.bg-paper {
+	background: var(--paper);
+	color: var(--ink);
+}
+
+.panel>.bg-cream {
+	background: var(--yellow-soft);
+	color: var(--ink);
+}
+
+.panel>.bg-yellow {
+	background: var(--yellow);
+	color: var(--ink);
+}
+
+.panel>.bg-ink {
+	background-color: var(--ink);
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+	background-size: 2rem 2rem;
+	color: var(--white);
+}
+
+.bg-ink h2.major:after {
+	background-color: var(--yellow);
+}
+
+.bg-ink mark {
+	color: var(--yellow);
+}
+
+.panel>.intro {
+	width: 22rem;
+}
+
+.panel>.intro+.inner {
+	border-left: var(--line) solid var(--ink);
+}
+
+.panel>.inner.columns>* {
+	margin-left: 3rem;
+}
+
+.panel>.inner.columns> :first-child {
+	margin-left: 0;
+}
+
+.panel>.inner.columns.divided>* {
+	margin-left: 5rem;
+}
+
+.panel>.inner.columns.divided> :first-child {
+	margin-left: 0;
+}
+
+.panel>.inner.columns.divided>*:before {
+	margin-left: -2.5rem;
+	top: 0;
+	height: 100%;
+	width: 2px;
+	background-color: var(--ink);
+	opacity: 0.25;
+}
+
+.panel>.inner.columns.aligned {
+	align-items: center;
+}
+
+/* 幅（横スクロール表示のとき） */
+.w-20 {
+	width: 20rem;
+}
+
+.w-22 {
+	width: 22rem;
+}
+
+.w-24 {
+	width: 24rem;
+}
+
+.panel.banner .w-hero {
+	width: 36rem;
+}
+
+.panel.banner .w-heroimg {
+	width: 20rem;
+	border-right: var(--line) solid var(--ink);
+}
+
+.panel>.inner.w-contact {
+	width: 34rem;
+	flex-grow: 0;
+}
+
+/* ---------- Parts ---------- */
+
+/* 英字の小見出し */
+.eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	font-family: var(--font-en);
+	font-size: 0.75rem;
+	font-weight: 400;
+	letter-spacing: 0.14em;
+	line-height: 1;
+	margin: 0 0 1.5rem 0;
+}
+
+.eyebrow b {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.1rem;
+	height: 2.1rem;
+	border-radius: 50%;
+	background: var(--ink);
+	color: var(--yellow);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+.bg-ink .eyebrow b {
+	background: var(--yellow);
+	color: var(--ink);
+}
+
+.panel.banner .eyebrow {
+	font-size: 1rem;
+	letter-spacing: 0.04em;
+}
+
+.panel.banner .eyebrow span {
+	font-size: 0.65rem;
+	letter-spacing: 0.14em;
+	background: var(--yellow);
+	border: 2px solid var(--ink);
+	border-radius: 2rem;
+	padding: 0.4rem 0.7rem 0.35rem 0.8rem;
+}
+
+.lead {
+	font-size: 1.05rem;
+	font-weight: 700;
+	max-width: 26em;
+}
+
+/* トップの目次 */
+.toc {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.25rem;
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1.75rem 0;
+	font-family: var(--font-en);
+	font-size: 0.7rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.toc li {
+	padding: 0;
+}
+
+.toc a {
+	border-bottom-width: 3px;
+	padding-bottom: 0.1rem;
+}
+
+/* 黄色マーカー */
+.marker {
+	font-weight: 900;
+	background: linear-gradient(transparent 58%, var(--yellow) 58%);
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+/* ステートメントの大きな一文 */
+.pull {
+	font-size: 1.35rem;
+	font-weight: 900;
+	line-height: 1.6;
+	letter-spacing: 0.02em;
+}
+
+/* ボタン：黒い枠＋ぼかさない影 */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+	background-color: var(--white);
+	border-radius: 0.5rem;
+	box-shadow: inset 0 0 0 2px var(--ink), var(--shadow);
+	color: var(--ink) !important;
+	font-family: var(--font-jp);
+	font-size: 0.85rem;
+	font-weight: 900;
+	letter-spacing: 0.06em;
+	text-transform: none;
+	padding: 0 1.75rem;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.button:hover {
+	box-shadow: inset 0 0 0 2px var(--ink), 0.1rem 0.1rem 0 var(--ink);
+	color: var(--ink) !important;
+	transform: translate(0.2rem, 0.2rem);
+}
+
+.button:active {
+	background-color: var(--yellow-soft);
+}
+
+.button.primary {
+	background-color: var(--yellow);
+	box-shadow: inset 0 0 0 2px var(--ink), var(--shadow);
+	color: var(--ink) !important;
+}
+
+.button.primary:hover,
+.button.primary:active {
+	background-color: var(--yellow);
+}
+
+.button.large {
+	font-size: 1rem;
+	height: 3.6rem;
+	line-height: 3.6rem;
+	padding: 0 2.25rem;
+}
+
+.button.icon:before {
+	font-size: 1rem;
+	margin: 0 0.6rem 0 0;
+	top: -0.05rem;
+}
+
+.button.icon.circle {
+	border-radius: 100%;
+}
+
+.button.icon.circle:before {
+	margin: 0;
+}
+
+.bg-ink .button.primary {
+	box-shadow: inset 0 0 0 2px var(--ink), 0.3rem 0.3rem 0 var(--white);
+}
+
+.bg-ink .button.primary:hover {
+	box-shadow: inset 0 0 0 2px var(--ink), 0.1rem 0.1rem 0 var(--white);
+}
+
+ul.actions {
+	margin-bottom: 0;
+}
+
+/* カード */
+.card {
+	background: var(--white);
+	border: 2px solid var(--ink);
+	border-radius: 0.6rem;
+	box-shadow: var(--shadow);
+	padding: 1.25rem 1.25rem 1.35rem 1.25rem;
+}
+
+.card p {
+	font-size: 0.8rem;
+	line-height: 1.75;
+	margin-bottom: 0.6rem;
+}
+
+.card p:last-child {
+	margin-bottom: 0;
+}
+
+.card.flat {
+	box-shadow: none;
+	background: var(--yellow-soft);
+}
+
+.card-label {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.5rem;
+	font-weight: 900;
+	font-size: 0.85rem !important;
+	border-bottom: 2px solid var(--ink);
+	padding-bottom: 0.45rem;
+	margin-bottom: 0.9rem !important;
+}
+
+.card-label small {
+	font-size: 0.65rem;
+	font-weight: 700;
+	opacity: 0.7;
+	white-space: nowrap;
+}
+
+/* 数字 */
+.stat {
+	font-size: 0.95rem !important;
+	font-weight: 900;
+	line-height: 1.2 !important;
+	margin-bottom: 0.85rem !important;
+}
+
+.stat b {
+	font-family: var(--font-en);
+	font-size: 2.6rem;
+	font-weight: 400;
+	letter-spacing: -0.02em;
+	margin-right: 0.15rem;
+	background: linear-gradient(transparent 62%, var(--yellow) 62%);
+}
+
+.stat-pre {
+	display: block;
+	font-size: 0.7rem;
+	font-weight: 700;
+	margin-bottom: 0.35rem;
+}
+
+.note {
+	font-size: 0.7rem !important;
+	font-weight: 700;
+	background: var(--yellow-soft);
+	border-radius: 0.3rem;
+	padding: 0.3rem 0.6rem;
+	display: inline-block;
+}
+
+/* Media */
+.media-main {
+	width: 50rem;
+}
+
+.media-side {
+	width: 18rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.media-head {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-size: 1.2rem;
+	margin: 0 0 1.1rem 0;
+}
+
+.media-head .icon:before {
+	font-size: 1.3rem;
+}
+
+.media-head small {
+	font-family: var(--font-jp);
+	font-size: 0.8rem;
+	font-weight: 700;
+	opacity: 0.7;
+}
+
+.card .media-head {
+	font-size: 1.05rem;
+	margin-bottom: 0.75rem;
+}
+
+.pill {
+	margin-left: auto;
+	font-size: 0.8rem;
+	font-weight: 900;
+	background: var(--yellow);
+	border: 2px solid var(--ink);
+	border-radius: 2rem;
+	padding: 0.2rem 1rem 0.25rem 1rem;
+	line-height: 1.5;
+}
+
+.pill b {
+	font-family: var(--font-en);
+	font-size: 1.25rem;
+	font-weight: 400;
+	margin: 0 0.1rem 0 0.25rem;
+}
+
+.cards {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.cards.three {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.cards .card {
+	height: 100%;
+}
+
+/* Service */
+.service {
+	width: 18rem;
+	min-height: 18rem;
+}
+
+.service .num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 50%;
+	background: var(--ink);
+	color: var(--yellow);
+	font-family: var(--font-en);
+	font-size: 1.5rem;
+	line-height: 1;
+	margin: 0 0 1.1rem 0;
+}
+
+.service h3 {
+	font-size: 1.15rem;
+	line-height: 1.55;
+	margin-bottom: 0.9rem;
+	min-height: 3.1em;
+}
+
+.service h3 mark {
+	background: linear-gradient(transparent 58%, var(--yellow) 58%);
+}
+
+.bg-cream .service h3 mark {
+	background: linear-gradient(transparent 58%, #ffd21f 58%);
+}
+
+.service p {
+	font-size: 0.88rem;
+}
+
+/* Profile */
+#profile h2 {
+	font-family: var(--font-en);
+	font-weight: 400;
+	font-size: 2.6rem;
+	letter-spacing: 0;
+	line-height: 1.1;
+}
+
+#profile h2 small {
+	display: block;
+	font-family: var(--font-jp);
+	font-size: 0.85rem;
+	font-weight: 900;
+	letter-spacing: 0.2em;
+	margin-top: 0.5rem;
+}
+
+#profile h2.major:after {
+	bottom: -1.2rem;
+}
+
+.role {
+	font-size: 0.9rem;
+	font-weight: 900;
+	line-height: 1.8;
+}
+
+.card.motto {
+	padding: 1.5rem;
+}
+
+.card.motto p {
+	font-size: 0.9rem;
+	line-height: 1.85;
+}
+
+.card.motto .card-label {
+	font-family: var(--font-en);
+	font-weight: 400;
+	letter-spacing: 0.14em;
+	font-size: 0.75rem !important;
+}
+
+/* Contact */
+#contact .inner>p {
+	max-width: 26em;
+}
+
+#contact ul.actions {
+	margin: 0.75rem 0 2rem 0;
+}
+
+ul.contact-icons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 2rem;
+	margin: 0;
+}
+
+ul.contact-icons>li {
+	margin: 0;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+ul.contact-icons>li:before {
+	background-color: var(--yellow);
+	color: var(--ink);
+}
+
+ul.contact-icons>li a {
+	border-bottom: 2px solid transparent;
+}
+
+ul.contact-icons>li a:hover {
+	border-bottom-color: var(--yellow);
+}
+
+/* 読み込み中は装飾を止める（テンプレートの挙動に合わせる） */
+body.is-preload .button {
+	transition: none !important;
+}
+
+/* ---------- スマホ・縦長画面（縦スクロール表示） ---------- */
+
+@media screen and (max-width: 736px) {
+
+	#wrapper {
+		box-shadow: 0 0 0 var(--line) var(--ink), 0.4rem 0.4rem 0 var(--line) var(--ink);
+		margin-bottom: 6rem;
+	}
+
+	.panel+.panel {
+		border-left: 0;
+		border-top: var(--line) solid var(--ink);
+	}
+
+	.panel>.intro+.inner {
+		border-left: 0;
+		border-top: var(--line) solid var(--ink);
+	}
+
+	.panel>.inner.columns>*,
+	.panel>.inner.columns.divided>* {
+		margin-left: 0;
+		margin-top: 1.75rem;
+	}
+
+	.panel>.inner.columns> :first-child,
+	.panel>.inner.columns.divided> :first-child {
+		margin-top: 0;
+	}
+
+	.panel>.inner.columns.divided>* {
+		margin-top: 2.5rem;
+		padding-top: 0;
+	}
+
+	.panel>.inner.columns.divided>*:before {
+		top: auto;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		margin-left: 0;
+		margin-top: -1.25rem;
+	}
+
+	.panel>.inner.columns.aligned {
+		align-items: stretch;
+	}
+
+	.panel>.inner.columns>* {
+		position: relative;
+	}
+
+	.w-20,
+	.w-22,
+	.w-24,
+	.service,
+	.media-main,
+	.media-side,
+	.panel.banner .w-hero,
+	.panel>.inner.w-contact {
+		width: 100%;
+	}
+
+	.panel.banner .w-heroimg {
+		width: 100%;
+		border-right: 0;
+		border-bottom: var(--line) solid var(--ink);
+	}
+
+	.panel>.intro {
+		padding: 2.8875rem 1.75rem 2.8875rem 1.75rem;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h1 br,
+	h2 br {
+		display: none;
+	}
+
+	.pull br {
+		display: none;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	.lead {
+		font-size: 1.05rem;
+	}
+
+	.eyebrow {
+		font-size: 0.8rem;
+	}
+
+	.toc {
+		font-size: 0.8rem;
+	}
+
+	.cards.three {
+		grid-template-columns: 1fr;
+	}
+
+	.card p {
+		font-size: 0.95rem;
+	}
+
+	.card-label {
+		font-size: 1rem !important;
+	}
+
+	.card-label small,
+	.stat-pre,
+	.note {
+		font-size: 0.8rem !important;
+	}
+
+	.media-head {
+		flex-wrap: wrap;
+	}
+
+	.pill {
+		margin-left: 0;
+	}
+
+	.service h3 {
+		min-height: 0;
+		font-size: 1.25rem;
+	}
+
+	.service p,
+	.card.motto p,
+	.role {
+		font-size: 1rem;
+	}
+
+	.button {
+		font-size: 0.95rem;
+	}
+
+	.button.large {
+		width: 100%;
+		padding: 0 1rem;
+	}
+
+	#contact ul.actions {
+		margin-left: 0;
+	}
+
+	#contact ul.actions li {
+		padding-left: 0;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#wrapper {
+		box-shadow: none;
+		margin-bottom: 5rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.button,
+	#wrapper {
+		transition: none !important;
+	}
+}

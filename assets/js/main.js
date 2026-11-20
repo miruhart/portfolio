@@ -322,9 +322,15 @@
 							$bodyHtml.stop();
 
 						// Calculate delta, direction.
+							// Use whichever axis moved more, so a trackpad's small sideways drift
+							// can't flip the direction: down/right = forward, up/left = back.
 							var	n = normalizeWheel(event.originalEvent),
-								x = (n.pixelX != 0 ? n.pixelX : n.pixelY),
-								delta = Math.min(Math.abs(x), 150) * settings.scrollWheel.factor,
+								x = (Math.abs(n.pixelY) >= Math.abs(n.pixelX) ? n.pixelY : n.pixelX);
+
+							if (x == 0)
+								return;
+
+							var	delta = Math.min(Math.abs(x), 150) * settings.scrollWheel.factor,
 								direction = x > 0 ? 1 : -1;
 
 						// Scroll page.
